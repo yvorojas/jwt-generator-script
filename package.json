@@ -5,5 +5,14 @@
   "main": "index.js",
   "repository": "https://github.com/yvorojas/jwt-generator-script.git",
   "author": "Yvo Rojas <yvo.rojas.valdes@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express-jwt": "^5.3.1",
+    "fs": "^0.0.1-security",
+    "jsonwebtoken": "^8.3.0",
+    "shelljs": "^0.8.2"
+  },
+  "scripts": {
+    "start": "node index"
+  }
 }
