@@ -2,3 +2,5 @@ node_modules/
 .idea/
 coverage/
 yarn-error.log
+token
+certs/
