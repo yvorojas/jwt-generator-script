@@ -10,15 +10,19 @@ const RSA_FILE_ROUTE = './certs/private_cert.pem.pub';
 const fs = require('fs');
 
 // Delete previous generated token
-const existsFile = fs.existsSync(TOKEN_ROUTE);
-if (existsFile){
+if (fs.existsSync(TOKEN_ROUTE)){
     fs.unlinkSync(TOKEN_ROUTE);
 }
 
 // Delete previous certs files
-fs.readdirSync(CERTS_FOLDER_ROUTE).forEach(file => {
-    fs.unlinkSync(`${CERTS_FOLDER_ROUTE}/${file}`);
-  });
+const existsCertFolder = fs.existsSync(CERTS_FOLDER_ROUTE);
+if (existsCertFolder) {
+    fs.readdirSync(CERTS_FOLDER_ROUTE).forEach(file => {
+        fs.unlinkSync(`${CERTS_FOLDER_ROUTE}/${file}`);
+    });
+} else {
+    fs.mkdirSync(CERTS_FOLDER_ROUTE);
+}
 
 // Dependency to execute shell script to create priv and pub cert 
 const shelljs = require('shelljs');
