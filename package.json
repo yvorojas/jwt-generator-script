@@ -1,0 +1,9 @@
+{
+  "name": "jwt-generator-script",
+  "version": "1.0.0",
+  "description": "Script for generate jwt with RSA256 private and public certs",
+  "main": "index.js",
+  "repository": "https://github.com/yvorojas/jwt-generator-script.git",
+  "author": "Yvo Rojas <yvo.rojas.valdes@gmail.com>",
+  "license": "MIT"
+}
