@@ -1,3 +1,3 @@
-ssh-keygen -t rsa -b 4096 -f certs/private_cert.pem
+openssl genrsa -out certs/private_cert.pem 4096
 # Don't add passphrase
-openssl rsa -in certs/private_cert.pem -pubout -outform PEM -out certs/public_cert.pub
+openssl rsa -in certs/private_cert.pem -pubout -outform PEM -out certs/public_cert.pub -inform pem

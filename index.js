@@ -31,10 +31,8 @@ const shelljs = require('shelljs');
 // Execute sh
 console.log('-----------------------------------------------------------');
 console.log('GENERATING CERTS...');
-shelljs.exec(consts.SH_ROUTE, {silent:true});
+shelljs.exec(consts.SH_ROUTE);
 console.log('CERTS GENERATED SUCCESSFULLY!!!');
-
-fs.unlinkSync(consts.RSA_FILE_ROUTE);
 
 // JWT dependencies
 const jwt = require('express-jwt');
@@ -45,10 +43,8 @@ const privCert = fs.readFileSync(consts.PRIVATE_CERT_ROUTE);
 
 // JWT Payload Definition, a simple object
 const payload = {
-    message: 'I AM A PAYLOAD!',
-    otherProperty: 'Value',
-    environment: 'DEVELOPMENT',
-    application_name: 'SAMPLE',
+    "environment": "DEVELOPMENT",
+    "application_name": "pmc-policy-api",
 };
 
 // JWT algorithm object definition.
