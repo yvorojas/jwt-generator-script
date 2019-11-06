@@ -2,17 +2,27 @@
   "name": "jwt-generator-script",
   "version": "1.0.0",
   "description": "Script for generate jwt with RSA256 private and public certs",
-  "main": "index.js",
+  "main": "src/index.js",
   "repository": "https://github.com/yvorojas/jwt-generator-script.git",
   "author": "Yvo Rojas <yvo.rojas.valdes@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "command-line-args": "^5.1.1",
     "express-jwt": "^5.3.1",
     "fs": "^0.0.1-security",
     "jsonwebtoken": "^8.3.0",
     "shelljs": "^0.8.2"
   },
   "scripts": {
-    "start": "node index"
+    "start": "node src/index",
+    "lint": "eslint --fix ./src"
+  },
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.1",
+    "prettier": "^1.18.2"
   }
 }
